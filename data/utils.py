@@ -126,7 +126,8 @@ def rbfs_search(graph, heuristics, start, goal):
             
         succ_nodes = []
         for neighbor, cost in successors:
-            total_g = len(path) * 1 
+            #total_g = len(path) * 1 <- Salah!
+            total_g = len(path) + 1 
             child_f = max(total_g + cost + heuristics[neighbor], node_f)
             succ_nodes.append([child_f, neighbor, cost])
             
